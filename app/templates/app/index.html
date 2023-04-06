@@ -1,0 +1,453 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+
+<div class="w3-row-padding w3-center w3-margin-top">
+		<div class="w3-third">
+			<div class="w3-card w3-container" style="min-height: 460px">
+				<h3 style="color: blue; font-weight: bold">INPUT MATRIX</h3>
+				<br>
+				<table class="w3-table">
+					<thead>
+						<tr style="color: darkblue">
+							<th></th>
+							<th>0</th>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>4</th>
+							<th>5</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th style="color: darkblue;">0</th>
+							<td><button id='button00' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button01' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button02' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button03' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button04' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button05' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+						</tr>
+						<tr>
+							<th style="color: darkblue">1</th>
+							<td><button id='button10' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button11' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button12' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button13' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button14' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button15' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+						</tr>
+						<tr>
+							<th style="color: darkblue">2</th>
+							<td><button id='button20' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button21' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button22' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button23' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button24' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button25' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+						</tr>
+						<tr>
+							<th style="color: darkblue">3</th>
+							<td><button id='button30' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button31' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button32' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button33' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button34' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button35' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+						</tr>
+						<tr>
+							<th style="color: darkblue">4</th>
+							<td><button id='button40' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button41' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button42' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button43' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button44' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button45' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+						</tr>
+						<tr>
+							<th style="color: darkblue">5</th>
+							<td><button id='button50' style="font-weight: bold;"
+									class="w3-circle  w3-button w3-small"></button></td>
+							<td><button id='button51' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button52' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button53' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button54' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+							<td><button id='button55' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"></button></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<div class="w3-padding-32">
+					<button class="w3-btn w3-xlarge w3-theme-light w3-hover-teal"
+						style="font-weight: 900;" onclick="GenerateInputMatrix();">Create Input Matrix</button>
+				</div>
+			</div>
+		</div>
+	<div class="w3-third">
+			<div class="w3-card w3-container "
+				style="min-height: 460px;">
+				<h3 style="color: darkblue; font-weight: bold">CHOSE OPTIONS</h3>
+				<br>
+				<div class="w3-row">
+
+					<div class="w3-half" style="color: darkblue; font-weight: bold">
+						<h4>Distance(D)</h4>
+						<select class="w3-button" id="d" name="d" required>
+						<option value="1">Distance</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						</select> <br> 
+					</div>
+
+					<div class="w3-half" style="color: darkblue; font-weight: bold">
+						<h4>Angle</h4>
+							<select class="w3-button" id="a" name="a" required>
+							<option value="0">Angle</option>
+							<option value="0">0</option>
+							<option value="45">45</option>
+							<option value="90">90</option>
+							<option value="135">135</option>
+				</select> <br> <br>
+
+					</div>
+
+				</div>
+				<br>
+				<div class="w3-padding-32">
+					<button class="w3-btn w3-xlarge w3-theme-light w3-hover-teal"
+						style="font-weight: 900;" onclick="GenerateOutputMatrix();">Output Matrix</button>
+				</div>
+			</div>
+		</div>
+
+<script type='text/javascript'>
+var input_matrix = [];
+function GenerateInputMatrix()
+	{
+		$.ajax({type: "POST",url: "/",data:
+			{button: "button1",csrfmiddlewaretoken:'{{ csrf_token }}'},
+			success: function (data)
+			{
+				input_matrix=data.FirstMatrix;
+				showTable(data.FirstMatrix,1);
+			}
+		});
+		}
+function showTable(matrixdata,flag)
+	{
+			var buttontxt = '';
+			if(flag==1)
+			{
+				buttontxt='button';
+			}
+			else
+			{
+				buttontxt='';
+			}
+
+			var show_in_table=JSON.parse(matrixdata)
+			for(var i = 0; i < show_in_table[i].length; i++) 
+			{
+				for(var j = 0; j < show_in_table.length; j++) 
+				{
+					var temp=buttontxt+j;
+					var mainid=temp+i;
+					document.getElementById(mainid).innerHTML=show_in_table[j][i];				
+				}
+			}
+	}
+var buttoncolour='';
+function GenerateOutputMatrix()
+	{
+		input_matrix=JSON.stringify(input_matrix);
+		$.ajax({
+			type: "POST",
+			url: "/",
+			data: {
+				angle:$("#a option:selected").val(),
+				button: "button2",
+				distance:$("#d option:selected").val(),
+				inputarray:input_matrix,
+				csrfmiddlewaretoken:'{{ csrf_token }}'
+				},
+        success: function(data){
+				alert(data.SecondMatrix);
+				showTable(data.SecondMatrix,2);
+        }
+		});
+	}
+
+function sc(buttonid)
+	{
+		document.getElementById(buttonid).style.backgroundColor = buttoncolor();
+		var value=document.getElementById(buttonid).innerHTML;
+		var dist=$("#d option:selected").val()
+		var ang=$("#a option:selected").val()
+		$.ajax({
+			type: "POST",
+			url: "/",
+			data: {
+				button: "buttonSearch",
+				clicked_id:buttonid,
+				angle:$("#a option:selected").val(),
+				distance:$("#d option:selected").val(),
+				inputarray:input_matrix,
+				csrfmiddlewaretoken:'{{ csrf_token }}'
+				},
+        success: function(data)
+		{
+		var pos=parseInt(dist);
+		var alldata=JSON.parse(data.Result_Pair);
+		var length= parseInt(value);
+		var al= parseInt(ang);
+		for(var i=0;i<=length-1;i++)
+		{
+				var first=alldata[i][0];
+				var second=alldata[i][1];
+				var fromation,button_1,button_2,button_3,button_4,n2,n3,n4,n5,n6,n7,fromation2;
+				if(al==90)
+				{
+					formation="button"+first.toString();
+					fromation2=second.toString();
+					button_1=formation+second;
+					n2=first+1;
+					n3=first+2;
+					n4=first+3;
+					button_2="button"+n2+fromation2;
+					button_3="button"+n3+fromation2;
+					button_4="button"+n4+fromation2;
+				}
+				else if(al==0)
+				{
+					formation="button"+first.toString();
+					button_1=formation+second;
+					n2=second+1;
+					n3=second+2;
+					n4=second+3;
+					button_2=formation+n2;
+					button_3=formation+n3;
+					button_4=formation+n4;
+				}
+				else if(al==45)
+				{
+					formation="button"+first.toString();
+					button_1=formation+second;
+					n2=first-1;
+					n3=second+1;
+					button_2="button"+n2+n3;
+					n4=first-2;
+					n5=second+2;
+					button_3="button"+n4+n5;
+					n6=first-3;
+					n7=second+3;
+					button_4="button"+n6+n7;
+				}
+				else if(al==135)
+				{
+					formation="button"+first.toString();
+					button_1=formation+second;
+					n2=first-1;
+					n3=second-1;
+					button_2="button"+n2+n3;
+					n4=first-2;
+					n5=second-2;
+					button_3="button"+n4+n5;
+					n6=first-3;
+					n7=second-3;
+					button_4="button"+n6+n7;
+				}
+				else{alert("Error");}
+				document.getElementById(button_1).style.backgroundColor = buttoncolour;
+				if(pos==1)
+				{
+					document.getElementById(button_2).style.backgroundColor = buttoncolour;
+				}
+				else if(pos==2)
+				{						
+					document.getElementById(button_2).style.backgroundColor = buttoncolour;
+					document.getElementById(button_3).style.backgroundColor = buttoncolour;
+				}
+				 else if(pos==3)
+				{
+					document.getElementById(button_2).style.backgroundColor = buttoncolour;
+					document.getElementById(button_3).style.backgroundColor = buttoncolour;
+					document.getElementById(button_4).style.backgroundColor = buttoncolour;
+				}
+		}
+
+        }
+		});	
+	}
+function buttoncolor() 
+	{
+		buttoncolour='#' + Math.floor(Math.random() * 16777215).toString(16);
+		return buttoncolour;
+	}
+
+</script>
+
+
+
+
+		<div class="w3-third">
+			<div class="w3-card w3-container " style="min-height: 460px">
+				<h3 style="font-weight: bold; color: darkblue">OUTPUT MATRIX</h3>
+				<br>
+				<table class="w3-table">
+					<thead>
+						<tr style="color: darkblue">
+							<th></th>
+							<th>0</th>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>4</th>
+							<th>5</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th style="color: darkblue;">0</th>
+							<td><button id='00' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small" onclick="sc(this.id)"></button></td>
+							<td><button id='01' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='02' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='03' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='04' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='05' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+						</tr>
+						<tr>
+							<th style="color: darkblue">1</th>
+							<td><button id='10' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='11' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='12' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='13' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='14' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='15' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+						</tr>
+						<tr>
+							<th style="color: darkblue">2</th>
+							<td><button id='20' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='21' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='22' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='23' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='24' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='25' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+						</tr>
+						<tr>
+							<th style="color: darkblue">3</th>
+							<td><button id='30' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='31' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='32' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='33' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='34' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='35' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+						</tr>
+						<tr>
+							<th style="color: darkblue">4</th>
+							<td><button id='40' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='41' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='42' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='43' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='44' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='45' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+						</tr>
+						<tr>
+							<th style="color: darkblue">5</th>
+							<td><button id='50' style="font-weight: bold;"
+									class="w3-circle  w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='51' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='52' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='53' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='54' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+							<td><button id='55' style="font-weight: bold;"
+									class="w3-circle   w3-button w3-small"onclick="sc(this.id)"></button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
